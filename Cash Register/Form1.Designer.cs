@@ -123,6 +123,7 @@
             this.totalsButton.TabIndex = 9;
             this.totalsButton.Text = "Calculate Totals";
             this.totalsButton.UseVisualStyleBackColor = true;
+            this.totalsButton.Click += new System.EventHandler(this.TotalsButton_Click);
             // 
             // subTotalLabel
             // 
