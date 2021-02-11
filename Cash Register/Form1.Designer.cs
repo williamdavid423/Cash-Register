@@ -51,7 +51,7 @@
             // storeTitle
             // 
             this.storeTitle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.storeTitle.Font = new System.Drawing.Font("Amelia BT", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storeTitle.Location = new System.Drawing.Point(-2, -2);
             this.storeTitle.Name = "storeTitle";
             this.storeTitle.Size = new System.Drawing.Size(706, 88);
@@ -98,6 +98,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(56, 22);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox4
             // 

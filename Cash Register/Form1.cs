@@ -39,11 +39,25 @@ namespace Cash_Register
 
         private void TotalsButton_Click(object sender, EventArgs e)
         {
-            total = burgerPrice * burgerAmount + slidersPrice * sliderAmount + juicePrice * juiceAmount;
-            burgerAmount = TextBox1
-            subTotalLabel.Text += $"{total}";
+            try
+            {
+                juiceAmount = Convert.ToInt32(textBox5);
+                sliderAmount = Convert.ToInt32(textBox4);
+                burgerAmount = Convert.ToInt32(textBox1);
+                total = burgerPrice * burgerAmount + slidersPrice * sliderAmount + juicePrice * juiceAmount;
+                textBox1.Text = $"{total}"; 
 
+            }
+            catch
+            {
 
+            }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
