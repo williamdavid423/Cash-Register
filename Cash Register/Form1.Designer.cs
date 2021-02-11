@@ -46,12 +46,17 @@
             this.tenderedTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.receiptLabel = new System.Windows.Forms.Label();
+            this.subLabel = new System.Windows.Forms.Label();
+            this.taxAmountLabel = new System.Windows.Forms.Label();
+            this.totalAmountLabel = new System.Windows.Forms.Label();
+            this.changeAmountLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // storeTitle
             // 
             this.storeTitle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.storeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storeTitle.Font = new System.Drawing.Font("Amelia BT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storeTitle.Location = new System.Drawing.Point(-2, -2);
             this.storeTitle.Name = "storeTitle";
             this.storeTitle.Size = new System.Drawing.Size(706, 88);
@@ -135,6 +140,7 @@
             this.subTotalLabel.Size = new System.Drawing.Size(68, 16);
             this.subTotalLabel.TabIndex = 10;
             this.subTotalLabel.Text = "Sub Total";
+            this.subTotalLabel.Click += new System.EventHandler(this.SubTotalLabel_Click);
             // 
             // taxLabel
             // 
@@ -184,6 +190,7 @@
             this.changeButton.TabIndex = 15;
             this.changeButton.Text = "Calculate Change";
             this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // receiptButton
             // 
@@ -193,6 +200,7 @@
             this.receiptButton.TabIndex = 16;
             this.receiptButton.Text = "Print Receipt";
             this.receiptButton.UseVisualStyleBackColor = true;
+            this.receiptButton.Click += new System.EventHandler(this.ReceiptButton_Click);
             // 
             // tenderedTextbox
             // 
@@ -219,12 +227,61 @@
             this.receiptLabel.Size = new System.Drawing.Size(317, 345);
             this.receiptLabel.TabIndex = 19;
             // 
+            // subLabel
+            // 
+            this.subLabel.Location = new System.Drawing.Point(192, 245);
+            this.subLabel.Name = "subLabel";
+            this.subLabel.Size = new System.Drawing.Size(100, 23);
+            this.subLabel.TabIndex = 20;
+            this.subLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // taxAmountLabel
+            // 
+            this.taxAmountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.taxAmountLabel.Location = new System.Drawing.Point(192, 269);
+            this.taxAmountLabel.Name = "taxAmountLabel";
+            this.taxAmountLabel.Size = new System.Drawing.Size(100, 23);
+            this.taxAmountLabel.TabIndex = 21;
+            this.taxAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // totalAmountLabel
+            // 
+            this.totalAmountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.totalAmountLabel.Location = new System.Drawing.Point(192, 302);
+            this.totalAmountLabel.Name = "totalAmountLabel";
+            this.totalAmountLabel.Size = new System.Drawing.Size(100, 23);
+            this.totalAmountLabel.TabIndex = 22;
+            this.totalAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // changeAmountLabel
+            // 
+            this.changeAmountLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.changeAmountLabel.Location = new System.Drawing.Point(192, 390);
+            this.changeAmountLabel.Name = "changeAmountLabel";
+            this.changeAmountLabel.Size = new System.Drawing.Size(100, 23);
+            this.changeAmountLabel.TabIndex = 23;
+            this.changeAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(414, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 23);
+            this.label2.TabIndex = 24;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(702, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.changeAmountLabel);
+            this.Controls.Add(this.totalAmountLabel);
+            this.Controls.Add(this.taxAmountLabel);
+            this.Controls.Add(this.subLabel);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tenderedTextbox);
@@ -245,6 +302,7 @@
             this.Controls.Add(this.storeTitle);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,6 +328,11 @@
         private System.Windows.Forms.TextBox tenderedTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label receiptLabel;
+        private System.Windows.Forms.Label subLabel;
+        private System.Windows.Forms.Label taxAmountLabel;
+        private System.Windows.Forms.Label totalAmountLabel;
+        private System.Windows.Forms.Label changeAmountLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 

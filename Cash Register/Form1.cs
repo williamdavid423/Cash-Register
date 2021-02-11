@@ -15,12 +15,15 @@ namespace Cash_Register
         double burgerPrice = 7.50;
         double slidersPrice = 3.50;
         double juicePrice = 3.25;
-        int burgerAmount;
-        int sliderAmount;
-        int juiceAmount;
-        double total;
-        double taxAmount = 0.13;
-        double totalAmount;
+        int burgerAmount = 0;
+        int sliderAmount = 0;
+        int juiceAmount = 0;
+        double total = 0;
+        double taxRate = 0.13;
+        double taxAmount = 0;
+        double totalAmount = 0;
+        double changeAmount = 0;
+        double amountTendered = 0;
 
         public Form1()
         {
@@ -41,12 +44,16 @@ namespace Cash_Register
         {
             try
             {
-                juiceAmount = Convert.ToInt32(textBox5);
-                sliderAmount = Convert.ToInt32(textBox4);
-                burgerAmount = Convert.ToInt32(textBox1);
-                total = burgerPrice * burgerAmount + slidersPrice * sliderAmount + juicePrice * juiceAmount;
-                textBox1.Text = $"{total}"; 
+                burgerAmount = Convert.ToInt32(textBox1.Text);
+                juiceAmount = Convert.ToInt32(textBox5.Text);
+                sliderAmount = Convert.ToInt32(textBox4.Text);
 
+                total = burgerPrice * burgerAmount + slidersPrice * sliderAmount + juicePrice * juiceAmount;
+                subLabel.Text = $"{total.ToString(".00")}";
+                taxAmount = total * taxRate;
+                taxAmountLabel.Text = $"{taxAmount.ToString(".00")}";
+                totalAmount = total + taxAmount;
+                totalAmountLabel.Text = $"{totalAmount.ToString(".00")}";
             }
             catch
             {
@@ -58,6 +65,28 @@ namespace Cash_Register
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void SubTotalLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChangeButton_Click(object sender, EventArgs e)
+        {
+            amountTendered = Convert.ToDouble(tenderedTextbox.Text);
+            changeAmount = amountTendered - totalAmount;
+            changeAmountLabel.Text = $"{changeAmount.ToString(".00")}";
+        }
+
+        private void ReceiptButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
