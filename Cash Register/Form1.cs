@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Cash_Register
 {
@@ -87,11 +88,14 @@ namespace Cash_Register
 
         private void ReceiptButton_Click(object sender, EventArgs e)
         {
-            burgerAmount = Convert.ToInt32(textBox1.Text);
-            juiceAmount = Convert.ToInt32(textBox5.Text);
-            sliderAmount = Convert.ToInt32(textBox4.Text);
+            //burgerAmount = Convert.ToInt32(textBox1.Text);
+            //juiceAmount = Convert.ToInt32(textBox5.Text);
+            //sliderAmount = Convert.ToInt32(textBox4.Text);
 
-            receiptTitleLabel.Text = "Bill's Burger's Inc.";
+            SoundPlayer printingPlayer = new SoundPlayer(Properties.Resources.printerSound);
+            printingPlayer.Play();
+
+            receiptTitleLabel.Text = "Bill's Burger's Inc.";  
             Refresh();
             Thread.Sleep(1000);
 
@@ -132,6 +136,7 @@ namespace Cash_Register
 
             niceDayLabel.Text = "Have a Nice Day!";
 
+            printingPlayer.Stop();
         }
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
